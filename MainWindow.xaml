@@ -1,0 +1,43 @@
+﻿<Window x:Class="RegistroPersona.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroPersona"
+        mc:Ignorable="d"
+        Title="RegistroPersona" Height="293" Width="318">
+    <Grid Height="267" Background="White">
+        <Label Content="ID" HorizontalAlignment="Left" Margin="17,18,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="17,53,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telefono" HorizontalAlignment="Left" Margin="17,84,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cedula" HorizontalAlignment="Left" Margin="17,112,0,0" VerticalAlignment="Top"/>
+        <Label Content="Direccion" HorizontalAlignment="Left" Margin="17,138,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha De Nacimiento" HorizontalAlignment="Left" Margin="17,167,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TBnombre" HorizontalAlignment="Left" Margin="147,53,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="20"/>
+        <TextBox x:Name="TBtelefono" HorizontalAlignment="Left" Margin="147,84,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="20"/>
+        <TextBox x:Name="TBcedula" HorizontalAlignment="Left" Margin="147,112,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="20"/>
+        <TextBox x:Name="TBdireccion" HorizontalAlignment="Left" Margin="147,138,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="20"/>
+        <DatePicker x:Name="fecha_nacimiento" HorizontalAlignment="Left" Margin="147,167,0,0" VerticalAlignment="Top" Width="132" Height="22"/>
+        <Button Name="BTNuevo" Content="Nuevo" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="17,206,0,0" VerticalAlignment="Top" Height="36" Width="81" FontWeight="Normal" Click="BTNuevo_Click_1" >
+            <Button.Background>
+                <ImageBrush AlignmentX="Left" Stretch="Uniform" ImageSource="/usuario nuevo.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BTguardar" Content="Guardar" HorizontalContentAlignment="Right" HorizontalAlignment="Center" Margin="0,206,0,0" VerticalAlignment="Top" Height="36" Width="82" Click="BTguardar_Click_1" >
+            <Button.Background>
+                <ImageBrush AlignmentX="Left" ImageSource="/gu.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BTeliminar" Content="Eliminar" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="220,206,0,0" VerticalAlignment="Top"  Height="36" Width="81" Click="BTeliminar_Click_1" >
+            <Button.Background>
+                <ImageBrush AlignmentX="Left" Stretch="Uniform" ImageSource="/14148.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BTbuscar" Content="Buscar" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" Height="36" Width="81" Click="BTbuscar_Click_1" >
+            <Button.Background>
+                <ImageBrush   ImageSource="/Buscar.png" Stretch="Uniform" AlignmentX="Left" />
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="TBid" HorizontalAlignment="Left" Margin="147,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Height="20"/>
+    </Grid>
+</Window>
