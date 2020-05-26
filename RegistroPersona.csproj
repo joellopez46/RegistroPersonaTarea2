@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
+	<StartWorkingDirectory>$(MSBuildProjectDirectory)</StartWorkingDirectory>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
@@ -14,10 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="14148.png" />
-    <Resource Include="Buscar.png" />
-    <Resource Include="gu.png" />
-    <Resource Include="usuario nuevo.png" />
+    <Resource Include="Recursos\14148.png" />
+    <Resource Include="Recursos\Buscar.png" />
+    <Resource Include="Recursos\gu.png" />
+    <Resource Include="Recursos\usuario nuevo.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -8,11 +8,11 @@ namespace Registro.DAL
 {
     public class Contexto : DbContext
     {
-        public DbSet<Persona> Personas { get; set; }
+        public DbSet<Personas> Personas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-         //   optionsBuilder.UseSqlServer(@"server = DESKTOP-1234567/SQLEXPRESS; database = personaDB; trusted_connection = true; ");
+            optionsBuilder.UseSqlite("Data Source=PersonaDB");
         }
     }
 }

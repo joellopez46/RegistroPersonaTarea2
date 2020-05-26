@@ -35,34 +35,34 @@ namespace RegistroPersona
             TBdireccion.Text = string.Empty;
             fecha_nacimiento.SelectedDate = DateTime.Now;
         }
-        private Persona LlenaClase()
+        private Personas LlenaClase()
         {
-            Persona persona = new Persona();
+            Personas persona = new Personas();
             persona.ID = Convert.ToInt32(TBid.Text);
-            persona.nombre = TBnombre.Text;
-            persona.telefono = TBtelefono.Text;
-            persona.cedula = TBcedula.Text;
-            persona.direccion = TBdireccion.Text;
-            persona.fecha_nacimiento = (DateTime)fecha_nacimiento.SelectedDate;
+            persona.Nombre = TBnombre.Text;
+            persona.Telefono = TBtelefono.Text;
+            persona.Cedula = TBcedula.Text;
+            persona.Direccion = TBdireccion.Text;
+            persona.Fecha_nacimiento = (DateTime)fecha_nacimiento.SelectedDate;
             return persona;
         }
-        private void LlenaCampo(Persona persona)
+        private void LlenaCampo(Personas persona)
         {
             TBid.Text = Convert.ToString(persona.ID);
-            TBnombre.Text = persona.nombre;
-            TBtelefono.Text = persona.telefono;
-            TBcedula.Text = persona.cedula;
-            TBdireccion.Text = persona.direccion;
+            TBnombre.Text = persona.Nombre;
+            TBtelefono.Text = persona.Telefono;
+            TBcedula.Text = persona.Cedula;
+            TBdireccion.Text = persona.Direccion;
         }
         private void BTbuscar_Click_1(object sender, RoutedEventArgs e)
         {
             int id;
-            Persona persona = new Persona();
+            Personas persona = new Personas();
             int.TryParse(TBid.Text, out id);
 
             Limpiar();
 
-            persona = PersonaBLL.buscar(id);
+            persona = PersonaBLL.Buscar(id);
 
             if (persona != null)
             {
@@ -76,7 +76,7 @@ namespace RegistroPersona
         }
         private bool ExisteEnLaBaseDeDatos()
         {
-            Persona persona = PersonaBLL.buscar(Convert.ToInt32(TBid.Text));
+            Personas persona = PersonaBLL.Buscar(Convert.ToInt32(TBid.Text));
             return (persona != null);
         }
         private void BTNuevo_Click_1(object sender, RoutedEventArgs e)
@@ -86,16 +86,16 @@ namespace RegistroPersona
 
         private void BTguardar_Click_1(object sender, RoutedEventArgs e)
         {
-            Persona persona;
+            Personas persona;
             bool paso = false;
 
-            if (!validar())
+            if (!Validar())
                 return;
 
             persona = LlenaClase();
 
             if (TBid.Text == "0")
-                paso = PersonaBLL.guardar(persona);
+                paso = PersonaBLL.Guardar(persona);
             else
             {
                 if (!ExisteEnLaBaseDeDatos())
@@ -103,7 +103,7 @@ namespace RegistroPersona
                     MessageBox.Show("ERROR", "Opcion no valida", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
-                paso = PersonaBLL.modificar(persona);
+                paso = PersonaBLL.Modificar(persona);
             }
 
             if (paso)
@@ -113,7 +113,7 @@ namespace RegistroPersona
             else
                 MessageBox.Show("ERROR", "Opcion no valida", MessageBoxButton.OK, MessageBoxImage.Error);
         }
-        private bool validar()
+        private bool Validar()
         {
             bool paso = true;
             if (TBnombre.Text == string.Empty)
@@ -145,7 +145,7 @@ namespace RegistroPersona
             int.TryParse(TBid.Text, out id);
             Limpiar();
 
-            if (PersonaBLL.eliminar(id))
+            if (PersonaBLL.Eliminar(id))
             {
                 MessageBox.Show("Eliminado correctamente", "Persona eliminada", MessageBoxButton.OK, MessageBoxImage.Error);
             }

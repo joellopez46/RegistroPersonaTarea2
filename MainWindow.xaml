@@ -20,22 +20,22 @@
         <DatePicker x:Name="fecha_nacimiento" HorizontalAlignment="Left" Margin="147,167,0,0" VerticalAlignment="Top" Width="132" Height="22"/>
         <Button Name="BTNuevo" Content="Nuevo" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="17,206,0,0" VerticalAlignment="Top" Height="36" Width="81" FontWeight="Normal" Click="BTNuevo_Click_1" >
             <Button.Background>
-                <ImageBrush AlignmentX="Left" Stretch="Uniform" ImageSource="/usuario nuevo.png"/>
+                <ImageBrush AlignmentX="Left" Stretch="Uniform" ImageSource="/Recursos/usuario nuevo.png" />
             </Button.Background>
         </Button>
         <Button x:Name="BTguardar" Content="Guardar" HorizontalContentAlignment="Right" HorizontalAlignment="Center" Margin="0,206,0,0" VerticalAlignment="Top" Height="36" Width="82" Click="BTguardar_Click_1" >
             <Button.Background>
-                <ImageBrush AlignmentX="Left" ImageSource="/gu.png" Stretch="Uniform"/>
+                <ImageBrush AlignmentX="Left" ImageSource="/Recursos/gu.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
         <Button x:Name="BTeliminar" Content="Eliminar" HorizontalContentAlignment="Right"  HorizontalAlignment="Left" Margin="220,206,0,0" VerticalAlignment="Top"  Height="36" Width="81" Click="BTeliminar_Click_1" >
             <Button.Background>
-                <ImageBrush AlignmentX="Left" Stretch="Uniform" ImageSource="/14148.png"/>
+                <ImageBrush AlignmentX="Left" Stretch="Uniform" ImageSource="/Recursos/14148.png" />
             </Button.Background>
         </Button>
         <Button x:Name="BTbuscar" Content="Buscar" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" Height="36" Width="81" Click="BTbuscar_Click_1" >
             <Button.Background>
-                <ImageBrush   ImageSource="/Buscar.png" Stretch="Uniform" AlignmentX="Left" />
+                <ImageBrush   ImageSource="/Recursos/Buscar.png" Stretch="Uniform" AlignmentX="Left" />
             </Button.Background>
         </Button>
         <TextBox x:Name="TBid" HorizontalAlignment="Left" Margin="147,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Height="20"/>

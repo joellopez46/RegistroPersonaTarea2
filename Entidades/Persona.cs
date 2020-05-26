@@ -5,25 +5,24 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RegistroPersona.Entidades
 {
-    public class Persona
+    public class Personas
     {
         [Key]
-
         public int ID { get; set; }
-        public string nombre { get; set; }
-        public string telefono { get; set; }
-        public string cedula { get; set; }
-        public string direccion { get; set; }
-        public DateTime fecha_nacimiento { get; set; }
+        public string Nombre { get; set; }
+        public string Telefono { get; set; }
+        public string Cedula { get; set; }
+        public string Direccion { get; set; }
+        public DateTime Fecha_nacimiento { get; set; }
 
-        public Persona()
+        public Personas()
         {
             ID = 0;
-            nombre = string.Empty;
-            telefono = string.Empty;
-            cedula = string.Empty;
-            direccion = string.Empty;
-            fecha_nacimiento = DateTime.Now;
+            Nombre = string.Empty;
+            Telefono = string.Empty;
+            Cedula = string.Empty;
+            Direccion = string.Empty;
+            Fecha_nacimiento = DateTime.Now;
         }
     }
 }

@@ -11,17 +11,16 @@ namespace RegistroPersona.BLL
 {
     public class PersonaBLL
     {
-        public static Persona Persona { get; private set; }
+        public static Personas Persona { get; private set; }
 
-        public static bool guardar(PersonaBLL Persona)
+        public static bool Guardar(Personas persona)
         {
             bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                if (db.Personas.Add(PersonaBLL.Persona) != null)
+                if (db.Personas.Add(persona) != null)
                     paso = db.SaveChanges() > 0;
-
             }
             catch (Exception)
             {
@@ -34,7 +33,7 @@ namespace RegistroPersona.BLL
             return paso;
         }
 
-        public static bool modificar(Persona persona)
+        public static bool Modificar(Personas persona)
         {
             bool paso = false;
             Contexto db = new Contexto();
@@ -54,7 +53,7 @@ namespace RegistroPersona.BLL
             return paso;
         }
 
-        public static bool eliminar(int id)
+        public static bool Eliminar(int id)
         {
             bool paso = false;
             Contexto db = new Contexto();
@@ -75,10 +74,10 @@ namespace RegistroPersona.BLL
             return paso;
         }
 
-        public static Persona buscar(int id)
+        public static Personas Buscar(int id)
         {
             Contexto db = new Contexto();
-            Persona persona = new Persona();
+            Personas persona = new Personas();
 
             try
             {
@@ -96,9 +95,14 @@ namespace RegistroPersona.BLL
             return persona;
         }
 
-        public static List<Persona> getlist(Expression<Func<Persona, bool>> persona)
+        internal static object Buscar(object p)
         {
-            List<Persona> lista = new List<Persona>();
+            throw new NotImplementedException();
+        }
+
+        public static List<Personas> GetList(Expression<Func<Personas, bool>> persona)
+        {
+            List<Personas> lista = new List<Personas>();
             Contexto db = new Contexto();
 
             try
@@ -114,11 +118,6 @@ namespace RegistroPersona.BLL
                 db.Dispose();
             }
             return lista;
-        }
-
-        internal static bool guardar(Persona persona)
-        {
-            throw new NotImplementedException();
         }
     }
 }
